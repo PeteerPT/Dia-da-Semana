@@ -31,17 +31,7 @@ let chute = prompt("Qual é o dia da semana?").toLowerCase(); // Convertendo o c
 let encontrado = diasDaSemana.some(dia => dia.toLowerCase().includes(chute));
 
 if (encontrado) {
-    exibirTextoNaTela("h2", "Sextou, Sabadou e Domingou!!");
+    exibirTextoNaTela("h2", "Bora trabaiar!");
 } else {
-    exibirTextoNaTela("h2", "Bora trabaia...");
-}
-
-if (regexFimDeSemana.test(chuteNormalizado)) {
     exibirTextoNaTela("h2", "Bora relaxar e tomar um suco de Laranja");
-} 
-else if (regexDiaDeSemana.test(chuteNormalizado)) {
-    exibirTextoNaTela("h2", "Bora trabalhar...");
-} 
-else {
-    exibirTextoNaTela("h2", "Dia inválido, tente novamente.");
 }
