@@ -27,12 +27,16 @@ exibirMensagemInicial();
 
 let chute = prompt("Qual é o dia da semana?");
 
-let chuteNormalizado = chute.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+let chute = prompt("Qual é o dia da semana?").toLowerCase(); // Convertendo o chute para minúsculo
 
-console.log("Chute normalizado:", chuteNormalizado);
+// Verificando se o dia da semana contém o chute
+let encontrado = diaDaSemana.some(dia => dia.toLowerCase().includes(chute));
 
-let regexFimDeSemana = /sabado|domingo/i;
-let regexDiaDeSemana = /segunda|terca|quarta|quinta|sexta/i;
+if (encontrado) {
+    exibirTextoNaTela("h2", "Sextou, Sabadou e Domingou!!");
+} else {
+    exibirTextoNaTela("h2", "Bora trabaia...");
+}
 
 if (regexFimDeSemana.test(chuteNormalizado)) {
     exibirTextoNaTela("h2", "Bora relaxar e tomar um suco de Laranja");
