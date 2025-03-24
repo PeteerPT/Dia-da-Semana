@@ -30,9 +30,9 @@ if (chute == diaDaSemana) {
     
 }
 
-if (diaDaSemana.includes(chute)) {
-    exibirTextoNaTela("h2", "Sextou, Sabadou e Domingou!!");
+if (chute.toLowerCase().includes("sabado")) {
+    exibirTextoNaTela("h2", "Então bora relaxar e tomar um suco de laranja");
 } else {
-    exibirTextoNaTela("h2", "Bora trabaia...");
+    exibirTextoNaTela("h2", "Bora trabalhar...");
 }
 
