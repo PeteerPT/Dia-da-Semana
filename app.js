@@ -28,7 +28,7 @@ exibirMensagemInicial();
 let chute = prompt("Qual é o dia da semana?").toLowerCase(); // Convertendo o chute para minúsculo
 
 // Verificando se o dia da semana contém o chute
-let encontrado = diaDaSemana.some(dia => dia.toLowerCase().includes(chute));
+let encontrado = diasDaSemana.some(dia => dia.toLowerCase().includes(chute));
 
 if (encontrado) {
     exibirTextoNaTela("h2", "Sextou, Sabadou e Domingou!!");
