@@ -1,11 +1,14 @@
 alert("Vamos lá! Informe qual é o dia da semana");
-let diaDaSemana = ["Sábado", "Domingo", "Sexta", "domingo", "Sabado", "sabado", "sábado"];
+
+let diasDaSemana = ["segunda", "terca", "quarta", "quinta", "sexta"];
+let fimDeSemana = ["sabado", "domingo"];
 
 
-
-function exibirTextoNaTela(tag, texto){
+function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
+    if (campo) { 
+        campo.innerHTML = texto;
+    }
     if ('speechSynthesis' in window) {
         let utterance = new SpeechSynthesisUtterance(texto);
         utterance.lang = 'pt-BR'; 
@@ -16,23 +19,27 @@ function exibirTextoNaTela(tag, texto){
     }
 }
 
-
 function exibirMensagemInicial() {
     exibirTextoNaTela("h2", "Qual será o dia da semana?");
 }
 
-exibirMensagemInicial("h2", "Qual será o dia da semana?");
+exibirMensagemInicial();
 
+let chute = prompt("Qual é o dia da semana?");
 
-let chute = prompt("Qual é o dia da semana?")
+let chuteNormalizado = chute.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 
-if (chute == diaDaSemana) {
-    
-}
+console.log("Chute normalizado:", chuteNormalizado);
 
-if (chute.toLowerCase().includes("sabado")) {
-    exibirTextoNaTela("h2", "Então bora relaxar e tomar um suco de laranja");
-} else {
+let regexFimDeSemana = /sabado|domingo/i;
+let regexDiaDeSemana = /segunda|terca|quarta|quinta|sexta/i;
+
+if (regexFimDeSemana.test(chuteNormalizado)) {
+    exibirTextoNaTela("h2", "Bora relaxar e tomar um suco de Laranja");
+} 
+else if (regexDiaDeSemana.test(chuteNormalizado)) {
     exibirTextoNaTela("h2", "Bora trabalhar...");
+} 
+else {
+    exibirTextoNaTela("h2", "Dia inválido, tente novamente.");
 }
-
