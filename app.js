@@ -24,13 +24,12 @@ function exibirMensagemInicial() {
 exibirMensagemInicial("h2", "Qual será o dia da semana?");
 
 
-let chute = prompt("Qual é o dia da semana?")
+let chute = prompt("Qual é o dia da semana?").toLowerCase(); // Convertendo o chute para minúsculo
 
-if (chute == diaDaSemana) {
-    
-}
+// Verificando se o dia da semana contém o chute
+let encontrado = diaDaSemana.some(dia => dia.toLowerCase().includes(chute));
 
-if (diaDaSemana.includes(chute)) {
+if (encontrado) {
     exibirTextoNaTela("h2", "Sextou, Sabadou e Domingou!!");
 } else {
     exibirTextoNaTela("h2", "Bora trabaia...");
