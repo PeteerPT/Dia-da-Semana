@@ -33,5 +33,5 @@ let encontrado = diasDaSemana.some(dia => dia.toLowerCase().includes(chute));
 if (encontrado) {
     exibirTextoNaTela("h2", "Bora trabaiar!");
 } else {
-    exibirTextoNaTela("h2", "Bora relaxar e tomar um suco de Laranja");
+    exibirTextoNaTela("h2", "Bora relaxar e tomar um suco de Laranja! ainn suquinho de laranja gostoso.");
 }
