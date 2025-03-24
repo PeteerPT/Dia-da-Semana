@@ -25,8 +25,6 @@ function exibirMensagemInicial() {
 
 exibirMensagemInicial();
 
-let chute = prompt("Qual é o dia da semana?");
-
 let chute = prompt("Qual é o dia da semana?").toLowerCase(); // Convertendo o chute para minúsculo
 
 // Verificando se o dia da semana contém o chute
